@@ -197,11 +197,6 @@ print("Action button pressed");
   
 
 <p  align="center">
-
-<img  src="https://github.com/theadeyemiolayinka/info_toast/blob/main/example/info_toast_animation.gif?raw=true"  height="600"/>
-
-<br>
-
   
 
 <b>A package to help you seamlessly create beautiful and customizable animated toasts and alerts in your app.</b>
