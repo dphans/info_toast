@@ -37,6 +37,7 @@ class InfoToast extends StatefulWidget {
     this.displayIcon = true,
     this.enableIconAnimation = true,
     this.iconSize = 20,
+    this.barrierColor,
   }) : super(key: key);
 
   InfoToast.success({
@@ -64,6 +65,7 @@ class InfoToast extends StatefulWidget {
     this.iconWidget,
     this.displayIcon = true,
     this.enableIconAnimation = true,
+    this.barrierColor,
   }) : super(key: key) {
     icon = Icons.check_circle;
     _initializeAttributes(successColor);
@@ -94,6 +96,7 @@ class InfoToast extends StatefulWidget {
     this.borderRadius = 20,
     this.displayIcon = true,
     this.enableIconAnimation = true,
+    this.barrierColor,
   }) : super(key: key) {
     icon = Icons.error_rounded;
     _initializeAttributes(errorColor);
@@ -124,6 +127,7 @@ class InfoToast extends StatefulWidget {
     this.iconWidget,
     this.displayIcon = true,
     this.enableIconAnimation = true,
+    this.barrierColor,
   }) : super(key: key) {
     icon = Icons.warning_rounded;
     _initializeAttributes(warningColor);
@@ -154,6 +158,7 @@ class InfoToast extends StatefulWidget {
     this.displayIcon = true,
     this.enableIconAnimation = true,
     this.iconWidget,
+    this.barrierColor,
   }) : super(key: key) {
     icon = Icons.info_rounded;
     _initializeAttributes(infoColor);
@@ -273,6 +278,9 @@ class InfoToast extends StatefulWidget {
   ///
   final bool enableIconAnimation;
 
+  ///Define modal background color (aka. [showDialog] barrierColor)
+  final Color? barrierColor;
+
   ///Display the created info toast
   ///[context] the context of the application
   ///
@@ -280,7 +288,7 @@ class InfoToast extends StatefulWidget {
     Navigator.of(context).push(
       PageRouteBuilder(
         fullscreenDialog: false,
-        barrierColor: Theme.of(context).scaffoldBackgroundColor,
+        barrierColor: barrierColor,
         opaque: false,
         barrierDismissible: true,
         pageBuilder: (context, _, __) => GestureDetector(
